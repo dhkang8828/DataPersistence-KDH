@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 #include "Database.h"
 
 static void printAll(Database& db) {
@@ -17,6 +18,7 @@ static void printAll(Database& db) {
 }
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
     try {
         Database db("inventory.db");
         db.createTable();
