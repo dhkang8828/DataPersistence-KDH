@@ -14,16 +14,21 @@
 
 - Language: C++
 - IDE: Visual Studio
-- DB: TBD (POC 진행 중)
+- DB: SQLite 3.46.1 (amalgamation)
 
 ## 프로젝트 구조
 
 ```
 DP/
-├── DP.slnx          # Visual Studio 솔루션 파일
+├── DP.slnx              # Visual Studio 솔루션 파일
 └── DP/
-    ├── DP.vcxproj   # Visual Studio 프로젝트 파일
-    └── ...
+    ├── DP.vcxproj       # Visual Studio 프로젝트 파일
+    ├── main.cpp         # 진입점 (CRUD 데모)
+    ├── Inventory.h      # 재고 데이터 모델
+    ├── Database.h/.cpp  # SQLite CRUD 래퍼
+    └── sqlite/
+        ├── sqlite3.h    # SQLite 헤더 (amalgamation 3.46.1)
+        └── sqlite3.c    # SQLite 소스 (amalgamation)
 ```
 
 ## 개발 환경 설정
@@ -38,6 +43,6 @@ DP/
 ## 진행 상황
 
 - [x] 프로젝트 초기 설정
-- [ ] DB 연동 구현
+- [x] DB 연동 구현 (SQLite CRUD)
 - [ ] CRUD 기능 구현
 - [ ] 테스트 및 검증
